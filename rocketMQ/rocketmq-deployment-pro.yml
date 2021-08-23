@@ -31,20 +31,17 @@ spec:
         env:
         - name: JAVA_OPT_EXT
           value: "-Xmx1024M -Xms768M -Xss256K"  
-        # 资源限制
         resources:
-          # 最小申请量
           requests:
             cpu: 100m
             memory: 1024Mi
-          # 最大资源限制（并不是绝对的）
           limits:
             cpu: 2000m
             memory: 4096Mi
         #volumeMounts:
-        #  - mountPath: /home/rocketmq/logs
+        #  - mountPath: /data/rocketmq/logs
         #    name: namesrvlogs
-        #  - mountPath: /home/rocketmq/store
+        #  - mountPath: /data/rocketmq/store
         #    name: namesrvstore
       volumes:
       - name: namesrvlogs
@@ -108,13 +105,10 @@ spec:
         env:
         - name: JAVA_OPT_EXT
           value: "-Xmx1024M -Xms768M -Xss256K"
-        # 资源限制
         resources:
-          # 最小申请量
           requests:
             cpu: 100m
             memory: 1024Mi
-          # 最大资源限制（并不是绝对的）
           limits:
             cpu: 2000m
             memory: 4096Mi
