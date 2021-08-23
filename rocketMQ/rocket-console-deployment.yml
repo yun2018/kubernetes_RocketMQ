@@ -25,14 +25,11 @@ spec:
           - containerPort: 8080
         env:
         - name: JAVA_OPTS
-          value: -Drocketmq.namesrv.addr=service-rocketmq-ns.rocketmq:9876 -Dcom.rocketmq.sendMessageWithVIPChannel=false -Xmx384M -Xms384M -Xss256K
-        # 资源限制
-        resources:
-          # 最小申请量
+          value: -Drocketmq.namesrv.addr=service-rocketmq-ns.rocketmq:9876 -Dcom.rocketmq.sendMessageWithVIPChannel=false -Xmx1024M -Xms512M -Xss256K
+        resources: 
           requests:
             cpu: 50m
             memory: 1024Mi
-          # 最大资源限制（并不是绝对的）
           limits:
             cpu: 2000m
             memory: 2048Mi
